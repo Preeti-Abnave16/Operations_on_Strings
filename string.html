@@ -1,0 +1,206 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset = utf-8 />
+<title>String Operations</title>
+
+<script language = "javascript">
+
+function myFunction1() 
+{
+  str1 = document.getElementById("t1").value;
+  str2 = document.getElementById("t2").disabled = true;
+  document.getElementById("res").innerHTML = str1.toLowerCase();
+
+  if(str1 == "")
+  {
+	alert("No Input");
+	return false;
+  }
+
+}
+
+function myFunction2() 
+{
+  str1 = document.getElementById("t1").value;
+  str2 = document.getElementById("t2").disabled = true;
+  document.getElementById("res").innerHTML = str1.toUpperCase();
+	
+  if(str1 == "")
+  {
+	alert("No Input");
+	return false;
+  }
+}
+
+function myFunction3() 
+{
+  str1 = document.getElementById("t1").value;
+  str2 = document.getElementById("t2").disabled = true;
+  len = str1.length;
+  document.getElementById("res").innerHTML = len;
+
+  if(str1 == "")
+  {
+	alert("No Input");
+	return false;
+  }
+}
+
+function myFunction4() 
+{
+  str1 = document.getElementById("t1").value;
+  str2 = document.getElementById("t2").disabled = false;
+  str2 = document.getElementById("t2").value;
+  document.getElementById("res").innerHTML = str1.concat(str2);
+	
+  if(str1 == "" && str2 == "")
+  {
+	alert("No Input");
+	return false;
+  }
+  else if(str2 == "")
+  {
+	alert("No Input in String2, Click OK to Enable");
+	return false;
+  }
+
+}
+
+function myFunction5() 
+{
+  str1 = document.getElementById("t1").value;
+  str2 = document.getElementById("t2").disabled = false;
+  str2 = document.getElementById("t2").value;
+  
+  if(str1 == "" && str2 == "")
+  {
+	alert("No Input");
+	return false;
+  }
+  else if(str2 == "")
+  {
+	alert("No Input in String2, Click OK to Enable");
+	return false;
+  }
+  document.getElementById("res").innerHTML = str1.includes(str2);
+
+}
+
+function checkPalindrome() 
+{
+   str1 = document.getElementById("t1").value;
+   str2 = document.getElementById("t2").disabled = true;
+   len = str1.length;
+
+   if(str1 == "")
+   {
+	alert("No Input");
+	return false;
+   }
+
+   // Use for loop to divide the words into 2 half
+   for (let i = 0; i < len / 2; i++) 
+   {
+
+        // validate the first and last characters are same
+        if (str1[i] !== str1[len - 1 - i])
+   	{
+            alert('RESULTS : String1 is NOT a Palindrome');
+	    return false;
+        }
+   }
+   alert('RESULTS : String1 is a Palindrome');
+   return true;
+
+}
+</script>
+
+<style type = "text/css">
+	body 
+	{
+	   background-color: 00CCFF;
+	   color : 0000FF;
+	   margin : 100px;
+	}
+	table
+	{
+	   width :30%;
+	}
+	td,th
+	{
+	   padding : 20px;
+	   text-align : center;
+	   font-size : 20px;
+	}
+	p
+	{
+	  font-size :30px;
+	}
+	input.button
+	{  
+	   text-align : center;
+	   font-size : 20px;
+	   border-radius : 0%;
+	   background-color : 0033FF;
+	   text-align: center;
+  	   text-decoration: none;
+	   color : white;
+	   margin: 8px 5px;
+	}
+	input.button:hover
+	{
+	   box-shadow : 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+	
+</style>
+
+</head>
+
+<body>
+<h1><center><u>OPERATIONS  ON  STRINGS</u></center></h1>
+<br><br><br><br>
+<form>
+<table align = "center">
+<tr>
+	<td>
+	<th>String1</th>
+	</td>
+	<td>
+	<input type = "text"  id = "t1"/>
+	</td>
+</tr>
+<br>
+<tr>
+	<td>
+	<th>String2</th>
+	</td>
+	<td>
+	<input type = "text"  id = "t2"/>
+	</td>
+</tr>
+</table>
+<br><br>
+<center>
+	<input type = "button" class = "button" onclick = "myFunction1()" value = "LowerCase" />
+	
+	<input type = "button" class = "button" onclick = "myFunction2()" value = "UpperCase" />
+	
+	<input type = "button" class = "button" onclick = "myFunction3()" value = "Length" />
+	
+	<input type = "button" class = "button" onclick = "myFunction4()" value = "Concatenate" />
+	
+	<input type = "button" class = "button" onclick = "myFunction5()" value = "Substring" />
+	
+	<input type = "button" class = "button" onclick = "checkPalindrome()" value = "Palindrome" />
+	
+	<input type = "reset" class = "button"  value = "Reset" />
+
+</form>
+
+<p>The Result is :
+<span id = "res"></span>
+</p>
+</center>	
+</body>
+</html>
